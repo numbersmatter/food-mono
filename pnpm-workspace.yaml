@@ -1,0 +1,4 @@
+packages:
+  - 'staff-apps/*'
+  - 'client-apps/*'
+  - 'packages/*'
