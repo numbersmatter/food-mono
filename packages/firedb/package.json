@@ -1,7 +1,7 @@
 {
   "name": "@food-mono/firedb",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/common.js",
   "types": "./dist/main.d.ts",
@@ -12,7 +12,10 @@
   },
   "devDependencies": {
     "typescript": "~5.6.2",
-    "vite": "^6.0.5",
+    "vite": "^5.4.11",
     "vite-plugin-dts": "^4.4.0"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.2"
   }
 }
