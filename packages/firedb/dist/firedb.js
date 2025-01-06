@@ -1,4 +1,4 @@
-const i = (o) => o == null;
+const e = (n) => n == null;
 export {
-  i as isEmpty
+  e as isEmpty
 };
