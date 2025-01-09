@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "main": "./dist/common.js",
+  "main": "./dist/firedb.js",
   "types": "./dist/main.d.ts",
   "scripts": {
     "dev": "vite",
