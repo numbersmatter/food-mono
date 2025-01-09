@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "common": "pnpm --filter common",
-    "events_app": "pnpm --filter events-app",
+    "events-app": "pnpm --filter events-app",
     "firedb": "pnpm --filter firedb"
   },
   "keywords": [],

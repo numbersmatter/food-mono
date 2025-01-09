@@ -1,4 +1,5 @@
 packages:
-  - 'staff-apps/*'
-  - 'client-apps/*'
+  - 'apps/staff-apps/*'
+  - 'apps/client-apps/*'
   - 'packages/*'
+  
