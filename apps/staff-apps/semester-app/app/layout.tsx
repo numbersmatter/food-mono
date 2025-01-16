@@ -1,21 +1,7 @@
-import { Form, Link, Outlet, useLoaderData } from "react-router"
-import { Button } from "~/components/ui/button"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarRail,
-} from "~/components/ui/sidebar"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from '~/components/ui/sidebar';
-import { Separator } from "~/components/ui/separator";
-
+import { Form, Link, Outlet } from "react-router";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarRail, SidebarTrigger } from "./components/ui/sidebar";
+import { Separator } from "./components/ui/separator";
+import { Button } from "./components/ui/button";
 
 
 // This is sample data.
@@ -50,14 +36,6 @@ const data = {
 }
 
 
-export async function loader() {
-  const logOutPath = "/logout"
-
-  return { logOutPath }
-}
-
-
-
 
 export default function MainLayout() {
   return (
@@ -89,9 +67,8 @@ function PageHeader() {
 }
 
 function LogOutButton() {
-  const { logOutPath } = useLoaderData();
   return (
-    <Form method="POST" action={logOutPath}>
+    <Form method="POST" action={"/logout"}>
       <Button variant={"destructive"} type="submit">Sign Out</Button>
     </Form>
   )
