@@ -22,6 +22,10 @@ const data = {
           title: "Events",
           url: "/events",
         },
+        {
+          title: "Semesters",
+          url: "/semesters",
+        }
         // {
         //   title: "Applications",
         //   url: "/applications",
