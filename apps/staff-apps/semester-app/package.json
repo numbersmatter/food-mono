@@ -14,7 +14,8 @@
   "dependencies": {
     "@conform-to/react": "^1.2.2",
     "@conform-to/zod": "^1.2.2",
-    "@food-mono/firedb": "workspace:^",
+    "@food-mono/common": "workspace:*",
+    "@food-mono/firedb": "workspace:*",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-separator": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.1",
@@ -30,6 +31,7 @@
     "react-router": "^7.1.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
+    "vite-plugin-dts": "^4.4.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

@@ -1,19 +1,21 @@
-import { Button } from "~/components/ui/button";
+import React from 'react';
+import { Button } from '~/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
-} from "~/components/ui/card";
-import { useForm } from "@conform-to/react";
-import { parseWithZod } from "@conform-to/zod";
-import { Input } from "~/components/ui/input";
-import { Form, useActionData } from "react-router";
-import { semesterschemas } from "./schemas";
-import type { Route } from "./+types/create";
+  CardTitle,
+} from '~/components/ui/card';
+import { useForm } from '@conform-to/react';
+import { parseWithZod } from '@conform-to/zod';
+import { Input } from '~/components/ui/input';
+import { Form, useActionData } from 'react-router';
+import type { Route } from './+types/create';
 import { z } from 'zod';
+import { isBlank } from '@food-mono/common';
+// import {  } from '@food-mono/firedb';
 
 export const CreateSemesterSchema = z.object({
   name: z.string().min(4),
@@ -25,10 +27,9 @@ export const action = async ({ request }: Route.ActionArgs) => {
   const formData = await request.formData();
 
   return {
-    formData
-  }
-}
-
+    formData,
+  };
+};
 
 export default function CreateSemesterPage() {
   const lastResult = useActionData();
@@ -38,12 +39,9 @@ export default function CreateSemesterPage() {
 
     // Reuse the validation logic on the client
     onValidate({ formData }) {
-      return parseWithZod(
-        formData,
-        {
-          schema: CreateSemesterSchema
-        }
-      );
+      return parseWithZod(formData, {
+        schema: CreateSemesterSchema,
+      });
     },
 
     // Validate the form on blur event triggered
@@ -55,14 +53,10 @@ export default function CreateSemesterPage() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>
-            Create Semester
-          </CardTitle>
-          <CardDescription>
-            Make a new semester
-          </CardDescription>
+          <CardTitle>Create Semester</CardTitle>
+          <CardDescription>Make a new semester</CardDescription>
         </CardHeader>
-        <Form method={"POST"} id={form.id} onSubmit={form.onSubmit}>
+        <Form method={'POST'} id={form.id} onSubmit={form.onSubmit}>
           <CardContent>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
@@ -83,12 +77,13 @@ export default function CreateSemesterPage() {
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button type="button" variant="outline">Cancel</Button>
+            <Button type="button" variant="outline">
+              Cancel
+            </Button>
             <Button type="submit">Deploy</Button>
           </CardFooter>
         </Form>
       </Card>
     </>
-  )
-
+  );
 }

@@ -1,9 +1,9 @@
+import { getServerEnv } from '../env.server';
 import { initializeFirestoreFoodPantryDb } from '@food-mono/firedb';
-import { getServerEnv } from '~/env.server';
 
 const { SERVICE_ACCOUNT, FIREBASE_APP_NAME } = getServerEnv();
 
-const { foodPantryDb } = initializeFirestoreFoodPantryDb({
+export const { foodPantryDb } = initializeFirestoreFoodPantryDb({
   FIREBASE_APP_NAME,
   SERVICE_ACCOUNT,
   collectionPaths: {
